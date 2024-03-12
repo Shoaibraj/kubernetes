@@ -1,9 +1,9 @@
-apiVersion: apps/v1
-kind: ReplicaSet
+apiVersion: v1
+kind: ReplicationController
 metadata:
-  name: my-rs
+  name: my-rc
   labels:
-    app: cbz-app
+    app: my-app
 spec: 
   template:
     metadata:
