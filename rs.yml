@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-rs
+  labels:
+    app: cbz-app
+spec: 
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app
+        image: nginx
+        ports:
+          - name: http
+            protocol: TCP
+            containerPort: 80
+  replicas: 3
+  selector:
+    app: my-app
